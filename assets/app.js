@@ -223,12 +223,7 @@ const io = new IntersectionObserver((entries) => {
 }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
 document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
 
-/* ---------- quote: words light up with scroll ---------- */
-const quote = $(".quote-band p");
-quote.innerHTML = quote.textContent.split(" ").map((w) => `<span class="w">${w}</span>`).join(" ");
-const words = [...quote.querySelectorAll(".w")];
-
-/* ---------- scroll-linked: parallax, hero drift, quote, progress ---------- */
+/* ---------- scroll-linked: parallax, hero drift, progress ---------- */
 const heroCopy = $(".hero-copy");
 const heroBtn = $(".hero-photo-btn");
 const hero = $(".hero-band");
@@ -257,19 +252,12 @@ function onScroll() {
     el.style.transform = `translate3d(0, ${t * -7}%, 0)`;
   });
 
-  // quote lights up word by word as it crosses the viewport
-  const qr = quote.getBoundingClientRect();
-  const qp = clamp((vh * 0.85 - qr.top) / (vh * 0.5), 0, 1);
-  const lit = Math.round(qp * words.length);
-  words.forEach((w, i) => w.classList.toggle("on", i < lit));
-
   // page progress on the sticky sub-nav
   const max = document.documentElement.scrollHeight - vh;
   progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
 }
 function requestTick() { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }
-if (reduced.matches) { words.forEach((w) => w.classList.add("on")); }
-else {
+if (!reduced.matches) {
   addEventListener("scroll", requestTick, { passive: true });
   addEventListener("resize", requestTick);
   onScroll();

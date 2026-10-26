@@ -170,11 +170,6 @@ a { color: inherit; }
 .card-by span { font-weight: 400; margin-left: 8px; }
 .card[hidden] { display: none; }
 
-/* ---------- quote ---------- */
-.quote-band { padding: 40px 0; }
-.quote-band blockquote { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 40px; }
-.quote-band p { font-size: 30px; }
-.quote-band cite { font-style: normal; font-size: 14px; font-weight: 500; }
 
 /* ---------- about ---------- */
 .about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px; padding-top: 24px; padding-bottom: 24px; }
@@ -272,9 +267,6 @@ html.lenis, html.lenis body { height: auto; }
 .js .hero-photo img { animation: settle 2.6s var(--ease) both; }
 .hero-copy { will-change: transform, opacity; }
 
-/* scroll-linked quote: words light up as it passes */
-.quote-band .w { opacity: .18; transition: opacity .25s linear; }
-.quote-band .w.on { opacity: 1; }
 
 /* page progress line on the sticky sub-nav */
 .subnav-progress { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: rgba(255,255,255,.55); transform-origin: left; transform: scaleX(0); pointer-events: none; }
@@ -319,7 +311,6 @@ html.lenis, html.lenis body { height: auto; }
   .hero-meta div:first-child { grid-column: 1 / -1; }
   .hero-photo figcaption { right: 16px; }
   .display-serif-lg { font-size: 32px; }
-  .quote-band p { font-size: 24px; }
   .viewer-title { font-size: 28px; }
   .tile-grid { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; justify-content: center; padding-top: 24px; padding-bottom: 24px; }
@@ -328,5 +319,4 @@ html.lenis, html.lenis body { height: auto; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js [data-reveal], .js .card[data-reveal] .card-img { opacity: 1; transform: none; clip-path: none; }
-  .quote-band .w { opacity: 1; }
 }
