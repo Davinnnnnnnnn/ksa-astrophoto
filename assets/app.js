@@ -1,67 +1,67 @@
 // 2026 KSA 천체사진전 — 작품 데이터와 갤러리/뷰어 동작
 const WORKS = [
   {
-    id: "m42", cat: "nebula", title: "별들의 요람, M42", by: ["25 손다빈"],
+    id: "m42", code: "M42", cat: "nebula", title: "별들의 요람, M42", by: ["25 손다빈"],
     kind: "발광성운 · 오리온자리", target: "오리온 대성운 (M42)",
     pos: "50% 40%",
     desc: "오리온자리의 칼 부분에서 맨눈으로도 찾을 수 있는 오리온 대성운(M42)입니다. 약 1,300광년 떨어진 이 거대한 가스 구름 속에서는 지금도 새로운 별이 태어나고 있습니다. 푸르게 빛나는 중심부에는 트라페지움이라 불리는 젊고 뜨거운 별들이 모여 있고, 이 별들이 내뿜는 강한 자외선이 주변의 수소 가스를 붉게 빛나게 합니다."
   },
   {
-    id: "eclipse", cat: "moon", title: "붉은 달로 가는 길", by: ["25 손다빈", "24 조현우"],
+    id: "eclipse", code: "Total Lunar Eclipse", cat: "moon", title: "붉은 달로 가는 길", by: ["25 손다빈", "24 조현우"],
     kind: "개기월식 · 합성", target: "개기월식", date: "2026. 3. 3.",
     pos: "50% 50%",
     desc: "2026년 3월 3일 개기월식이 진행되는 모습을 한 장에 모았습니다. 둥글게 둘러선 달들은 지구의 본그림자 속으로 조금씩 먹혀 들어갔다가 다시 빠져나오는 순간들이고, 한가운데의 붉은 달이 개기식입니다. 달이 붉게 물드는 것은 지구 대기를 지나며 꺾인 햇빛 가운데 붉은빛만 그림자 안까지 닿기 때문으로, 그 순간 달은 지구 위 모든 곳의 노을을 비추고 있는 셈입니다."
   },
   {
-    id: "veil", cat: "nebula", title: "별이 남긴 베일", by: ["25 김강우"],
+    id: "veil", code: "Veil Nebula", cat: "nebula", title: "별이 남긴 베일", by: ["25 김강우"],
     kind: "초신성 잔해 · 백조자리", target: "베일성운 · 피커링의 삼각형",
     pos: "45% 50%",
     desc: "백조자리 베일성운의 한 부분인 피커링의 삼각형입니다. 1~2만 년 전에 터진 초신성의 잔해가 초속 수백 킬로미터로 퍼져 나가며 성간 가스를 밀어내고 달구어, 붉은 수소와 푸른 산소의 빛이 얇은 천을 여러 겹 포개 놓은 듯한 섬세한 결을 이룹니다. 이 거대한 잔해는 지금도 조금씩 넓어지고 있습니다."
   },
   {
-    id: "ngc2244", cat: "nebula", title: "우주의 장미", by: ["25 김강우"],
+    id: "ngc2244", code: "NGC 2244", cat: "nebula", title: "우주의 장미", by: ["25 김강우"],
     kind: "발광성운 · 외뿔소자리", target: "장미성운 (NGC 2244)", date: "2026. 4. 2.",
     pos: "50% 45%",
     desc: "2026년 4월 2일에 담은 외뿔소자리의 장미성운입니다. 한가운데의 산개성단 NGC 2244를 이루는 젊고 뜨거운 별들이 강한 빛과 항성풍으로 주변 가스를 밀어내, 꽃잎에 둘러싸인 듯한 텅 빈 속을 만들었습니다. 왼쪽 위의 검은 얼룩들은 빛을 가리는 짙은 먼지 덩어리로, 그 안에서는 다음 세대의 별이 태어나고 있습니다."
   },
   {
-    id: "ngc7635", cat: "nebula", title: "별이 분 비눗방울", by: ["25 손다빈"],
+    id: "ngc7635", code: "NGC 7635", cat: "nebula", title: "별이 분 비눗방울", by: ["25 손다빈"],
     kind: "발광성운 · 카시오페이아자리", target: "거품성운 (NGC 7635)", date: "2025. 11. 10.",
     pos: "42% 50%",
     desc: "2025년 11월 10일에 담은 카시오페이아자리의 거품성운(NGC 7635)입니다. 거품 안쪽의 무겁고 뜨거운 별이 내뿜는 항성풍이 주변 가스를 밀어내며 지름 7광년 남짓한 둥근 거품을 만들었습니다. 거품 위쪽이 유난히 밝은 것은 그쪽의 짙은 분자 구름과 항성풍이 강하게 부딪히고 있기 때문입니다. 협대역 데이터를 Foraxx 팔레트로 재구성했습니다."
   },
   {
-    id: "m31", cat: "galaxy", title: "250만 년 전의 빛", by: ["22 김민수"],
+    id: "m31", code: "M31", cat: "galaxy", title: "250만 년 전의 빛", by: ["22 김민수"],
     kind: "나선은하 · 안드로메다자리", target: "안드로메다은하 (M31)",
     pos: "50% 50%",
     desc: "안드로메다자리에 있는 안드로메다은하(M31)입니다. 약 250만 광년 떨어진 이 나선은하는 맨눈으로 볼 수 있는 가장 먼 천체 가운데 하나로, 지금 보이는 빛은 250만 년 전에 출발한 것입니다. 지름은 약 22만 광년으로 우리은하보다 크며, 1조 개 가까운 별이 모인 밝은 중심부를 어두운 먼지 띠가 나선을 따라 감싸고 있습니다."
   },
   {
-    id: "m13", cat: "galaxy", title: "헤라클레스의 별무리", by: ["25 손다빈"],
+    id: "m13", code: "M13", cat: "galaxy", title: "헤라클레스의 별무리", by: ["25 손다빈"],
     kind: "구상성단 · 헤라클레스자리", target: "구상성단 (M13)",
     pos: "50% 50%",
     desc: "헤라클레스자리에 있는 구상성단 M13입니다. 약 2만 2천 광년 떨어진 이곳에는 수십만 개의 별이 지름 150광년 남짓한 공 모양으로 빽빽하게 모여 있고, 나이는 120억 년 가까이 되어 우리은하에서 가장 오래된 천체 가운데 하나로 꼽힙니다. 오른쪽 아래 구석에는 약 3천만 광년 너머의 나선은하 NGC 6207이 작게 담겼습니다."
   },
   {
-    id: "ngc884", cat: "galaxy", title: "페르세우스 이중성단", by: ["26 안주호"],
+    id: "ngc884", code: "NGC 869 · NGC 884", cat: "galaxy", title: "페르세우스 이중성단", by: ["26 안주호"],
     kind: "산개성단 · 페르세우스자리", target: "NGC 869 · NGC 884",
     pos: "50% 50%",
     desc: "이 사진은 페르세우스 자리에 위치한 두 개의 산개성단인 NGC869와 NGC884를 찍은 사진입니다. 2시간 20분 정도 노출시켜서 촬영했습니다."
   },
   {
-    id: "moon", cat: "moon", title: "달 표면 - 습기의 바다", by: ["25 김강우"],
+    id: "moon", code: "Mare Humorum", cat: "moon", title: "달 표면 - 습기의 바다", by: ["25 김강우"],
     kind: "달 · 월면", target: "습기의 바다 (Mare Humorum)", date: "2026. 10. 22.",
     pos: "60% 30%",
     desc: "2026년 10월 22일에 담은 달의 습기의 바다(Mare Humorum)입니다. 위쪽의 커다란 원형 구덩이는 가센디 크레이터로, 바닥을 가르는 균열과 한가운데 솟은 봉우리들이 낮게 비치는 햇빛에 또렷이 드러납니다. 왼쪽의 어둠은 낮과 밤을 가르는 명암경계선으로, 이 경계 가까이에서는 그림자가 길게 늘어져 달 표면의 높낮이가 가장 입체적으로 보입니다."
   },
   {
-    id: "sun_ar", cat: "sun", title: "태양 자기장의 붓질", by: ["25 김강우"],
-    kind: "태양 · 수소 알파(Hα)", target: "태양 채층 활동영역", date: "2026. 10. 7.",
-    pos: "50% 40%",
-    desc: "2026년 10월 7일 수소 알파(Hα) 파장으로 담은 태양 채층의 활동영역입니다. 중앙의 밝은 플라주는 자기장이 집중되어 채층이 달궈진 곳이며, 그 사이로 뻗은 어두운 줄기와 아래쪽의 거대한 J자형 구조는 코로나에 떠 있는 차가운 플라스마, 필라멘트입니다. 화면을 가득 메운 가는 결(피브릴)은 자기력선을 따라 정렬해 있어, 눈에 보이지 않는 자기장의 모양을 그대로 그려 보여 줍니다."
+    id: "sun_ar", code: "Sun · Hα", cat: "sun", title: "태양 자기장의 붓질", by: ["25 김강우"],
+    kind: "태양 · 수소 알파(Hα)", target: "태양 전체 (채층)",
+    pos: "50% 50%",
+    desc: "수소 알파(Hα) 파장으로 담은 태양의 전체 모습입니다. 원반을 뒤덮은 자잘한 결은 자기장을 따라 늘어선 채층의 가스이고, 군데군데 밝게 빛나는 곳은 자기장이 모여 달아오른 활동영역입니다. 원반 위를 가로지르는 검은 실 같은 줄기는 필라멘트로, 가장자리 바깥으로 솟은 붉은 홍염을 위에서 내려다본 모습입니다."
   },
   {
-    id: "sun_prom", cat: "sun", title: "태양에서 자라는 나무", by: ["25 김강우"],
+    id: "sun_prom", code: "Sun · Hα", cat: "sun", title: "태양에서 자라는 나무", by: ["25 김강우"],
     kind: "태양 · 수소 알파(Hα)", target: "태양 가장자리의 홍염", date: "2026. 10. 7.",
     pos: "60% 35%",
     desc: "2026년 10월 7일 수소 알파(Hα) 파장으로 담은 태양의 가장자리입니다. 둥근 원반의 밝은 테두리가 채층이고, 그 위로 솟구친 불꽃이 홍염(프로미넌스)입니다. 홍염은 자기장에 붙들린 채 수백만 도의 코로나 속에 떠 있는, 그보다 훨씬 차갑고 밀도 높은 플라스마 구름입니다. 사진 속 이 불꽃 하나의 높이만 해도 지구가 여러 개 들어갈 만큼 거대합니다."
@@ -95,7 +95,7 @@ if (window.Lenis && !reduced.matches) {
   requestAnimationFrame(raf);
 }
 function scrollToEl(el) {
-  const offset = -64;
+  const offset = -($(".topnav").offsetHeight + 8);
   if (lenis) lenis.scrollTo(el, { offset, duration: 1.6 });
   else window.scrollTo({ top: el.getBoundingClientRect().top + scrollY + offset, behavior: reduced.matches ? "auto" : "smooth" });
 }
@@ -126,15 +126,14 @@ CATS.forEach((c) => {
   filters.appendChild(b);
 });
 const bar = document.createElement("span");
-bar.className = "subnav-bar";
-filters.appendChild(bar);
-const progress = document.createElement("span");
-progress.className = "subnav-progress";
-$(".subnav").appendChild(progress);
+bar.className = "tab-pill";
+filters.prepend(bar);
+const progress = $("#progress");
 
 function moveBar() {
   const btn = filters.querySelector('[aria-selected="true"]');
-  bar.style.transform = `translateX(${btn.offsetLeft + btn.offsetWidth / 2 - 33.5}px)`;
+  bar.style.width = `${btn.offsetWidth}px`;
+  bar.style.transform = `translateX(${btn.offsetLeft}px)`;
 }
 addEventListener("resize", moveBar);
 document.fonts && document.fonts.ready.then(moveBar);
@@ -185,9 +184,10 @@ WORKS.forEach((w, i) => {
   card.innerHTML = `
     <div class="card-img"><div class="card-par"><img src="${img(w.id, 900)}" alt="" loading="lazy" style="object-position:${w.pos}"></div></div>
     <div class="card-body">
-      <p class="card-kind">${w.kind}</p>
+      <div class="card-top"><span class="caption">${w.code}</span>${w.date ? `<span class="caption">${w.date}</span>` : ""}</div>
       <h3 class="card-title">${w.title}</h3>
-      <p class="card-by">${w.by.join(", ")}${w.date ? `<span>${w.date}</span>` : ""}<span class="card-more">보기 →</span></p>
+      <p class="card-kind">${w.kind}</p>
+      <p class="card-by">${w.by.join(", ")}<span class="card-more">보기 →</span></p>
     </div>`;
   grid.appendChild(card);
 });
@@ -199,11 +199,54 @@ const order = ["25 손다빈", "25 김강우", "22 김민수", "26 안주호", "
 $("#people").innerHTML = order.map((p) => {
   const [gen, name] = p.split(" ");
   return `<div class="tile" data-reveal>
-    <p class="tile-gen">${gen}</p>
+    <p class="caption">${gen} · ${people[p].length} works</p>
     <p class="tile-name">${name}</p>
     <ul>${people[p].map((w) => `<li><button type="button" data-open="${w.id}">${w.title}</button></li>`).join("")}</ul>
   </div>`;
 }).join("");
+
+/* ---------- hero collage: works as off-axis sticky notes ---------- */
+const NOTES = [
+  { id: "m42", tag: "M42",      x: 4,  y: 4,  w: 42, r: -6, z: 2, paper: "lilac", d: 0.10, delay: 0.25 },
+  { id: "eclipse", tag: "Eclipse",  x: 52, y: 0,  w: 40, r: 5,  z: 1, paper: "cream", d: 0.18, delay: 0.35 },
+  { id: "moon", tag: "Moon",     x: 33, y: 33, w: 32, r: -2, z: 4, paper: "lime",  d: 0.05, delay: 0.45 },
+  { id: "veil", tag: "Veil",     x: 62, y: 42, w: 36, r: -4, z: 3, paper: "pink",  d: 0.14, delay: 0.55 },
+  { id: "ngc7635", tag: "NGC 7635",  x: 2,  y: 53, w: 36, r: 4,  z: 3, paper: "mint",  d: 0.22, delay: 0.65 },
+  { id: "sun_prom", tag: "Sun", x: 36, y: 63, w: 32, r: 7,  z: 5, paper: "coral", d: 0.08, delay: 0.75 }
+];
+const collage = $("#collage");
+collage.innerHTML = NOTES.map((n) => {
+  const w = WORKS.find((o) => o.id === n.id);
+  return `<div class="note" data-id="${n.id}" style="--x:${n.x}%;--y:${n.y}%;--w:${n.w}%;--z:${n.z};--r:${n.r}deg;--paper:var(--block-${n.paper});--delay:${n.delay}s">
+    <button type="button" class="note-paper" data-open="${n.id}" aria-label="${w.title} 크게 보기">
+      <div class="note-img"><img src="${img(n.id, 900)}" alt="" style="object-position:${w.pos}"></div>
+      <div class="note-cap"><b>${w.title}</b><span class="caption">${n.tag}</span></div>
+    </button>
+  </div>`;
+}).join("");
+const noteEls = [...collage.querySelectorAll(".note")].map((el, i) => ({ el, d: NOTES[i].d }));
+collage.querySelectorAll(".note-paper").forEach((paper) => {
+  if (reduced.matches) { paper.classList.add("landed"); return; }
+  paper.addEventListener("animationend", () => paper.classList.add("landed"), { once: true });
+});
+
+// notes lean toward the pointer, nearer notes (larger d) move more
+let mx = 0, my = 0, mTick = false;
+function applyMouse() {
+  mTick = false;
+  noteEls.forEach(({ el, d }) => {
+    el.style.setProperty("--mx", `${mx * d * 90}px`);
+    el.style.setProperty("--my", `${my * d * 90}px`);
+  });
+}
+if (!reduced.matches && matchMedia("(hover: hover)").matches) {
+  $(".hero-band").addEventListener("pointermove", (e) => {
+    mx = e.clientX / innerWidth - 0.5;
+    my = e.clientY / innerHeight - 0.5;
+    if (!mTick) { mTick = true; requestAnimationFrame(applyMouse); }
+  });
+  $(".hero-band").addEventListener("pointerleave", () => { mx = 0; my = 0; requestAnimationFrame(applyMouse); });
+}
 
 /* ---------- reveal on scroll (staggered per row) ---------- */
 function stagger(selector, step) {
@@ -215,7 +258,7 @@ function stagger(selector, step) {
 }
 stagger(".card", 110);
 stagger(".tile", 80);
-stagger(".channel", 120);
+stagger(".visit-item", 120);
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
     if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
@@ -225,7 +268,6 @@ document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
 
 /* ---------- scroll-linked: parallax, hero drift, progress ---------- */
 const heroCopy = $(".hero-copy");
-const heroBtn = $(".hero-photo-btn");
 const hero = $(".hero-band");
 const pars = [...document.querySelectorAll(".card-par")];
 let ticking = false;
@@ -233,7 +275,7 @@ function onScroll() {
   ticking = false;
   const vh = innerHeight;
   const y = scrollY;
-  const desktop = innerWidth > 974;
+  const desktop = innerWidth > 960;
 
   // hero: copy drifts up and fades, photo moves slower than the page
   const hh = hero.offsetHeight;
@@ -241,7 +283,8 @@ function onScroll() {
     const p = clamp(y / hh, 0, 1);
     heroCopy.style.transform = desktop ? `translate3d(0, ${y * -0.18}px, 0)` : "";
     heroCopy.style.opacity = desktop ? String(1 - p * 1.1) : "";
-    heroBtn.style.transform = `translate3d(0, ${y * 0.22}px, 0) scale(${1 + p * 0.06})`;
+    // notes rise at different speeds, so the collage separates into depth as you scroll
+    noteEls.forEach(({ el, d }) => el.style.setProperty("--py", `${-y * d * 1.6}px`));
   }
 
   // card images drift inside their frames
@@ -289,6 +332,7 @@ function visibleList() {
 function fillPanel(w, list) {
   $("#v-count").textContent = `${idx + 1} / ${list.length}`;
   $("#v-kind").textContent = w.kind;
+  $("#v-code").textContent = w.code;
   $("#v-title").textContent = w.title;
   $("#v-by").textContent = w.by.join(", ");
   $("#v-desc").textContent = w.desc;
@@ -341,9 +385,9 @@ function flyClone(fromImg, from, to, fromRadius, toRadius) {
 
 function sourceImgFor(id) {
   const card = grid.querySelector(`.card[data-open="${id}"]:not([hidden]) img`);
-  const cands = [card, id === "m42" ? $(".hero-photo img") : null].filter(Boolean);
+  const cands = [card, $(`.note[data-id="${id}"] img`)].filter(Boolean);
   return cands.find((el) => {
-    const r = el.parentElement.closest(".card-img, .hero-photo").getBoundingClientRect();
+    const r = el.parentElement.closest(".card-img, .note-img").getBoundingClientRect();
     return r.bottom > 0 && r.top < innerHeight && r.width > 0;
   }) || null;
 }
@@ -365,10 +409,10 @@ function open(id, srcEl) {
   showHint();
 
   const src = srcEl && srcEl.tagName === "IMG" ? srcEl : null;
-  const box = src && src.parentElement.closest(".card-img, .hero-photo");
-  anim(viewer, [{ backgroundColor: "rgba(33,30,28,0)" }, { backgroundColor: "rgba(33,30,28,1)" }], { duration: 600 });
+  const box = src && src.parentElement.closest(".card-img, .note-img");
+  anim(viewer, [{ backgroundColor: "rgba(0,0,0,0)" }, { backgroundColor: getComputedStyle(viewer).backgroundColor }], { duration: 600 });
   anim(stage, [{ opacity: 0 }, { opacity: 1 }], { duration: 500 });
-  anim(panel, [{ opacity: 0, transform: innerWidth > 974 ? "translateX(48px)" : "translateY(32px)" }, { opacity: 1, transform: "none" }], { duration: 900, delay: 120, fill: "backwards" });
+  anim(panel, [{ opacity: 0, transform: innerWidth > 960 ? "translateX(48px)" : "translateY(32px)" }, { opacity: 1, transform: "none" }], { duration: 900, delay: 120, fill: "backwards" });
   animateCopyIn();
 
   if (src && box && !reduced.matches && src.complete && src.naturalWidth) {
@@ -376,7 +420,7 @@ function open(id, srcEl) {
     const to = containRect(src.naturalWidth / src.naturalHeight);
     vimg.style.opacity = 0;
     src.style.visibility = "hidden";
-    const fly = flyClone(src, from, to, box.classList.contains("card-img") ? "8px" : "0px", "0px");
+    const fly = flyClone(src, from, to, getComputedStyle(box).borderRadius, "8px");
     chain = fly.done.then((c) => {
       vimg.style.opacity = "";
       src.style.visibility = "";
@@ -403,16 +447,15 @@ function close() {
   resetZoom(false);
   const target = w && sourceImgFor(w.id);
   anim(panel, [{ opacity: 1 }, { opacity: 0 }], { duration: 300, fill: "forwards" });
-  const bg = anim(viewer, [{ backgroundColor: "rgba(33,30,28,1)" }, { backgroundColor: "rgba(33,30,28,0)" }], { duration: 650, fill: "forwards" });
-  anim(stage, [{ backgroundColor: "#0e0d0c" }, { backgroundColor: "rgba(14,13,12,0)" }], { duration: 500, fill: "forwards" });
+  const bg = anim(viewer, [{ backgroundColor: getComputedStyle(viewer).backgroundColor }, { backgroundColor: "rgba(0,0,0,0)" }], { duration: 650, fill: "forwards" });
 
   if (target && !reduced.matches && vimg.naturalWidth) {
-    const box = target.parentElement.closest(".card-img, .hero-photo");
+    const box = target.parentElement.closest(".card-img, .note-img");
     const from = containRect(vimg.naturalWidth / vimg.naturalHeight);
     const to = box.getBoundingClientRect();
     target.style.visibility = "hidden";
     vimg.style.opacity = 0;
-    const fly = flyClone(target, from, to, "0px", box.classList.contains("card-img") ? "8px" : "0px");
+    const fly = flyClone(target, from, to, "8px", getComputedStyle(box).borderRadius);
     fly.el.style.objectFit = "cover";
     return fly.done.then((c) => {
       target.style.visibility = "";
@@ -556,7 +599,7 @@ document.addEventListener("click", (e) => {
   const t = e.target.closest("[data-open]");
   if (!t) return;
   const src = t.querySelector("img") || null;
-  open(t.dataset.open, src && src.closest(".card-img, .hero-photo") ? src : null);
+  open(t.dataset.open, src && src.closest(".card-img, .note-img") ? src : null);
 });
 $("#v-close").addEventListener("click", () => enqueue(close));
 $("#v-prev").addEventListener("click", () => enqueue(() => step(-1)));
@@ -576,6 +619,49 @@ document.addEventListener("keydown", (e) => {
   }
 });
 addEventListener("resize", () => { if (!viewer.hidden) resetZoom(false); });
+
+
+/* ---------- theme: system default, remembered choice, circular reveal ---------- */
+const root = document.documentElement;
+const toggle = $("#theme-toggle");
+const darkMq = matchMedia("(prefers-color-scheme: dark)");
+const themeNow = () => root.dataset.theme || (darkMq.matches ? "dark" : "light");
+function syncToggle() {
+  const dark = themeNow() === "dark";
+  toggle.setAttribute("aria-label", dark ? "라이트 모드로 전환" : "다크 모드로 전환");
+  toggle.setAttribute("aria-pressed", String(dark));
+}
+function applyTheme(t) {
+  root.dataset.theme = t;
+  try { localStorage.setItem("theme", t); } catch (e) {}
+  syncToggle();
+}
+toggle.addEventListener("click", () => {
+  const next = themeNow() === "dark" ? "light" : "dark";
+  if (reduced.matches) { applyTheme(next); return; }
+  if (document.startViewTransition) {
+    const r = toggle.getBoundingClientRect();
+    const x = r.left + r.width / 2, y = r.top + r.height / 2;
+    const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    const vt = document.startViewTransition(() => applyTheme(next));
+    vt.ready.then(() => {
+      root.animate(
+        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+        { duration: 750, easing: EASE, pseudoElement: "::view-transition-new(root)" });
+    }).catch(() => {});
+  } else {
+    root.classList.add("theme-anim");
+    applyTheme(next);
+    setTimeout(() => root.classList.remove("theme-anim"), 600);
+  }
+});
+darkMq.addEventListener("change", syncToggle);
+syncToggle();
+
+/* ---------- marquee: work titles and exhibition facts ---------- */
+const items = ["2026 KSA Astrophotography Exhibition", "2026. 10. 30 — 11. 01", "본관 1층", "별빛따라 주관", ...WORKS.map((w) => w.title)];
+const run = items.map((t) => `<span>${t}</span>`).join("");
+$("#marquee").innerHTML = run + run;
 
 moveBar();
 
