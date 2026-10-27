@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
-<link href="assets/style.css?v=4" rel="stylesheet">
+<link href="assets/style.css?v=5" rel="stylesheet">
 </head>
 <body>
 
@@ -25,6 +25,7 @@
     <a class="brand" href="#top" aria-label="별빛따라 홈"><span class="logo" aria-hidden="true"></span></a>
     <nav class="topnav-links" aria-label="주요 메뉴">
       <a href="#works">작품</a>
+      <a href="#vote">투표</a>
       <a href="#about">전시 소개</a>
       <a href="#visit">관람 안내</a>
       <a href="#photographers">촬영자</a>
@@ -80,6 +81,29 @@
         <p class="body">사진을 누르면 크게 보고 작품 설명을 읽을 수 있습니다.</p>
       </div>
       <div class="card-grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="block-wrap" id="vote">
+    <div class="container">
+      <div class="block block-pink" data-reveal>
+        <div class="vote">
+          <div class="vote-copy">
+            <p class="eyebrow">Vote</p>
+            <h2 class="headline">가장 아름다운 사진에 투표해 주세요</h2>
+            <p class="subhead">열한 점의 작품 가운데 마음에 드는 사진을 골라 주세요. 전시장 작품 패널의 QR 코드로도 참여할 수 있습니다.</p>
+            <div class="pill-row vote-actions">
+              <a class="pill pill-magenta" href="https://forms.gle/3QtcAjHHUYNxQ5aL7" target="_blank" rel="noopener">투표하러 가기 <span aria-hidden="true">↗</span></a>
+              <span class="caption">Google 설문으로 연결됩니다</span>
+            </div>
+          </div>
+          <div class="vote-fan" aria-hidden="true">
+            <img src="assets/img/ngc2244-900.jpg" alt="" loading="lazy">
+            <img src="assets/img/eclipse-900.jpg" alt="" loading="lazy">
+            <img src="assets/img/veil-900.jpg" alt="" loading="lazy">
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -194,6 +218,7 @@
       <p class="viewer-desc" id="v-desc"></p>
       <dl class="viewer-meta" id="v-meta"></dl>
     </div>
+    <a class="viewer-vote" href="https://forms.gle/3QtcAjHHUYNxQ5aL7" target="_blank" rel="noopener">마음에 드는 작품에 투표하기 <span aria-hidden="true">↗</span></a>
     <div class="pill-row viewer-nav">
       <button type="button" class="pill pill-secondary" id="v-prev">← 이전</button>
       <button type="button" class="pill pill-primary" id="v-next">다음 →</button>

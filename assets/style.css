@@ -272,6 +272,38 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 .visit-item { border-top: 1px solid rgba(0,0,0,.18); padding-top: 18px; }
 .visit-value { font-size: 40px; font-weight: 340; line-height: 1.15; letter-spacing: -0.8px; margin: 14px 0 12px; }
 .block-lime .pill-primary { background: #000; color: #fff; }
+
+/* vote: pink block with the page's single magenta promo CTA */
+.block-pink { background: var(--block-pink); }
+.vote { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 48px; align-items: center; max-width: 1080px; margin: 24px auto; }
+.vote-copy .eyebrow { margin-bottom: 18px; }
+.vote-copy .headline { font-size: 40px; font-weight: 340; line-height: 1.2; letter-spacing: -0.8px; margin-bottom: 20px; }
+.vote-actions { align-items: center; gap: 16px; margin-top: 32px; }
+.pill-magenta { background: #ff3d8b; color: #ffffff; padding: 10px 24px 12px; }
+.pill-magenta:hover { transform: scale(1.04); }
+.vote-fan { position: relative; height: 300px; }
+.vote-fan img {
+  position: absolute; top: 50%; left: 50%; width: 46%; aspect-ratio: 1; object-fit: cover;
+  border: 8px solid #fff; border-radius: 6px; box-shadow: 0 6px 20px rgba(0,0,0,.12);
+  transition: transform .8s var(--ease);
+}
+.vote-fan img:nth-child(1) { transform: translate(-115%, -50%) rotate(-9deg); }
+.vote-fan img:nth-child(2) { transform: translate(-50%, -56%) rotate(2deg); z-index: 2; }
+.vote-fan img:nth-child(3) { transform: translate(15%, -46%) rotate(10deg); }
+.block-pink:hover .vote-fan img:nth-child(1) { transform: translate(-125%, -52%) rotate(-13deg); }
+.block-pink:hover .vote-fan img:nth-child(2) { transform: translate(-50%, -62%) rotate(0deg); }
+.block-pink:hover .vote-fan img:nth-child(3) { transform: translate(25%, -46%) rotate(14deg); }
+@media (max-width: 960px) {
+  .vote { grid-template-columns: 1fr; gap: 24px; }
+  .vote-fan { height: 240px; max-width: 420px; width: 100%; margin: 0 auto; }
+}
+@media (max-width: 560px) {
+  .vote-copy .headline { font-size: 30px; letter-spacing: -0.5px; }
+  .vote-actions .pill-magenta { flex: 1; }
+  .vote-actions .caption { width: 100%; text-align: center; }
+  .vote-fan { height: 170px; }
+  .vote-fan img { width: 38%; border-width: 5px; }
+}
 .thanks { display: flex; align-items: center; justify-content: space-between; gap: 48px; max-width: 1000px; }
 .thanks .subhead { max-width: 640px; }
 
@@ -324,7 +356,12 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 .viewer-meta div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--hairline-soft); font-size: 15px; }
 .viewer-meta dt { font-family: var(--mono); font-size: 12px; letter-spacing: .6px; text-transform: uppercase; align-self: center; }
 .viewer-meta dd { font-weight: 480; text-align: right; }
-.viewer-nav { margin-top: auto; padding-top: 32px; flex-wrap: nowrap; }
+.viewer-vote {
+  align-self: flex-start; margin-top: auto; padding-top: 28px;
+  font-size: 16px; font-weight: 480; text-decoration: none; color: var(--ink);
+}
+.viewer-vote:hover { text-decoration: underline; text-underline-offset: 4px; }
+.viewer-nav { padding-top: 16px; flex-wrap: nowrap; }
 .viewer-nav .pill { flex: 1; }
 body.no-scroll { overflow: hidden; }
 
