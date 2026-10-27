@@ -22,6 +22,7 @@
   --scrim: rgba(0, 0, 0, .92);
   --tile-shadow: 0 4px 16px rgba(0, 0, 0, .06);
   --focus: #000000;
+  --bar-alpha: 72%;
 
   --sans: "Inter", "Pretendard Variable", Pretendard, system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, "Pretendard Variable", monospace;
@@ -49,6 +50,7 @@
     --note-shadow: 0 4px 16px rgba(0, 0, 0, .5);
     --note-shadow-lift: 0 18px 44px rgba(0, 0, 0, .7);
     --focus: #ffffff;
+    --bar-alpha: 62%;
     color-scheme: dark;
   }
 }
@@ -67,6 +69,7 @@
   --note-shadow: 0 4px 16px rgba(0, 0, 0, .5);
   --note-shadow-lift: 0 18px 44px rgba(0, 0, 0, .7);
   --focus: #ffffff;
+  --bar-alpha: 62%;
   color-scheme: dark;
 }
 
@@ -180,7 +183,8 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 .hero-meta dt { font-family: var(--mono); font-size: 12px; letter-spacing: .6px; text-transform: uppercase; margin-bottom: 8px; }
 .hero-meta dd { font-size: 18px; font-weight: 540; }
 /* sticky-note collage of works, slightly off-axis like notes on a board */
-.collage { position: relative; aspect-ratio: 1 / 1.02; }
+/* isolate: the notes' z-index only orders them among themselves, so none can rise above the sticky bars */
+.collage { position: relative; aspect-ratio: 1 / 1.02; isolation: isolate; }
 .note {
   position: absolute; left: var(--x); top: var(--y); width: var(--w); z-index: var(--z, 1);
   transform: translate3d(var(--mx, 0px), calc(var(--py, 0px) + var(--my, 0px)), 0);
@@ -204,6 +208,14 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 
 /* ---------- filter tabs (sticky) ---------- */
 .subnav { position: sticky; top: 64px; z-index: 4; background: var(--canvas); border-bottom: 1px solid var(--hairline); }
+/* frosted bars: content scrolling underneath shows through, blurred */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .topnav, .subnav {
+    background: color-mix(in srgb, var(--canvas) var(--bar-alpha), transparent);
+    -webkit-backdrop-filter: saturate(170%) blur(22px);
+    backdrop-filter: saturate(170%) blur(22px);
+  }
+}
 .tabs { position: relative; display: flex; gap: 4px; padding: 12px 0; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .tabs button {
