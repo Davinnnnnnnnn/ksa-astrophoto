@@ -458,3 +458,18 @@ html.lenis, html.lenis body { height: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js [data-reveal], .js .block[data-reveal], .js .card[data-reveal] .card-img { opacity: 1; transform: none; clip-path: none; }
 }
+
+/* ---------- type: serif labels, firmer titles (final font pick) ---------- */
+:root { --mono: "Instrument Serif", "Pretendard Variable", serif; }
+.eyebrow, .caption, .hero-meta dt, .viewer-meta dt, .tabs button .n {
+  font-weight: 400; letter-spacing: 0; text-transform: none; font-style: normal; font-size: 1.3em;
+}
+.eyebrow { letter-spacing: .02em; }
+.display-xl, .display-lg, .viewer-title, .visit-value, .footer-mark, .vote-copy .headline, .headline { font-weight: 600; }
+.display-xl { font-size: 104px; }
+.footer-mark { font-size: 48px; letter-spacing: -1px; }
+@media (max-width: 1280px) { .display-xl { font-size: 90px; } }
+@media (max-width: 560px) {
+  .display-xl { font-size: 56px; }
+  .footer-mark { font-size: 30px; letter-spacing: -0.5px; }
+}
