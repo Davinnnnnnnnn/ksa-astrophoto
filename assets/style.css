@@ -169,8 +169,14 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 .marquee { background: var(--inverse-canvas); color: var(--inverse-ink); height: 40px; overflow: hidden; display: flex; align-items: center; }
 .marquee-track { display: flex; flex: none; white-space: nowrap; animation: marquee 60s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
-.marquee-track span { font-size: 15px; font-weight: 400; padding: 0 22px; display: inline-flex; align-items: center; gap: 22px; }
-.marquee-track span::after { content: "✦"; font-size: 11px; opacity: .8; }
+.marquee-track, .marquee-dup { display: flex; flex: none; }
+.marquee-track a, .marquee-track button {
+  all: unset; cursor: pointer; font-size: 15px; font-weight: 400; padding: 0 22px; display: inline-flex; align-items: center; gap: 22px;
+}
+.marquee-track a::after, .marquee-track button::after { content: "✦"; font-size: 11px; opacity: .8; text-decoration: none; display: inline-block; }
+.marquee-track a:hover, .marquee-track button:hover { text-decoration: underline; text-underline-offset: 4px; }
+.marquee-track a:focus-visible, .marquee-track button:focus-visible { outline: 2px solid var(--inverse-ink); outline-offset: -4px; }
+.marquee:focus-within .marquee-track { animation-play-state: paused; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ---------- hero ---------- */

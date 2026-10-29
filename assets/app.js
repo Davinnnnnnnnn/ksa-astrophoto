@@ -658,10 +658,18 @@ toggle.addEventListener("click", () => {
 darkMq.addEventListener("change", syncToggle);
 syncToggle();
 
-/* ---------- marquee: work titles and exhibition facts ---------- */
-const items = ["2026 KSA Astrophotography Exhibition", "2026. 10. 30 — 11. 01", "본관 1층", "별빛따라 주관", ...WORKS.map((w) => w.title)];
-const run = items.map((t) => `<span>${t}</span>`).join("");
-$("#marquee").innerHTML = run + run;
+/* ---------- marquee: work titles and exhibition facts, each one a jump link ---------- */
+const items = [
+  `<a href="#about">2026 KSA Astrophotography Exhibition</a>`,
+  `<a href="#visit">2026. 10. 30 — 11. 01</a>`,
+  `<a href="#visit">본관 1층</a>`,
+  `<a href="#photographers">별빛따라 주관</a>`,
+  ...WORKS.map((w) => `<button type="button" data-open="${w.id}">${w.title}</button>`)
+];
+const run = items.join("");
+// the track repeats for a seamless loop; the copy is hidden from keyboard and screen readers
+$("#marquee").innerHTML = run + `<div class="marquee-dup" aria-hidden="true">${run}</div>`;
+$("#marquee").querySelectorAll(".marquee-dup a, .marquee-dup button").forEach((el) => el.setAttribute("tabindex", "-1"));
 
 moveBar();
 
